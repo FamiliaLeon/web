@@ -1,0 +1,290 @@
+/* Estilo para el index */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #00FF80, #00BFFF); /* Fondo verde aguamarina a azul agua marina */
+    color: #333333; /* Color de texto general */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #00BFFF; /* Azul agua marina */
+    color: #FFFFFF; /* Texto blanco */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #00FF80; /* Línea verde aguamarina */
+    border-radius: 10px 10px 0 0;
+    animation: slideInHeader 0.8s ease-out, glowHeader 1.5s infinite alternate; /* Animación de resplandor */
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F5F5DC; /* Beige */
+    animation: bounceInDown 1s ease-out; /* Animación de entrada */
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    transition: transform 0.3s;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 25%;
+    height: 100%;
+    background-color: #00BFFF; /* Azul agua marina */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+nav.active {
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F5F5DC; /* Beige */
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
+    text-shadow: 0 0 10px #00FF80; /* Efecto de resplandor */
+}
+
+nav ul li a:hover {
+    color: #00FF80; /* Verde aguamarina */
+    transform: scale(1.1); /* Aumento de tamaño */
+    text-shadow: 0 0 20px #00FF80; /* Efecto de destello */
+}
+
+main {
+    text-align: center;
+    padding: 80px 20px;
+    animation: backgroundFadeIn 1.2s ease-in-out;
+}
+
+main h2 {
+    color: #F5F5DC; /* Beige */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: textFadeIn 1s ease-in-out;
+}
+
+main p {
+    color: #333333; /* Gris oscuro para el texto principal */
+    margin-bottom: 40px;
+}
+
+main .btn {
+    background-color: #00FF80; /* Verde aguamarina */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: 0.3s ease, transform 0.3s, border 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: popIn 0.5s ease-out;
+    border: 2px solid transparent;
+}
+
+main .btn:hover {
+    background-color: #00BFFF; /* Azul agua marina */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid #00FF80; /* Borde verde aguamarina */
+}
+
+/* Efecto de parpadeo para los títulos */
+@keyframes blinkEffect {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h1, h2 {
+    animation: blinkEffect 1.5s infinite; /* Parpadeo de los títulos */
+}
+
+/* Efecto de rotación de imagen */
+img {
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+img:hover {
+    transform: rotate(10deg); /* Rotación de la imagen */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón de transición de opacidad */
+.floating-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #00BFFF; /* Azul agua marina */
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, opacity 0.3s ease;
+}
+
+.floating-btn:hover {
+    transform: translateY(-5px);
+    opacity: 0.8; /* Efecto de opacidad */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Suavizado en el menú móvil */
+nav {
+    transition: left 0.5s cubic-bezier(0.1, 0.7, 0.1, 1); /* Efecto suave al abrir el menú */
+}
+
+/* Estilo para la pantalla de acceso */
+#access-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #00FF80; /* Verde aguamarina */
+    color: white;
+}
+
+#access-screen input {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#access-screen button {
+    background-color: #00BFFF; /* Azul agua marina */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#access-screen button:hover {
+    background-color: #00FF80; /* Verde aguamarina */
+}
+
+/* Nuevas adiciones */
+
+/* Sombra dinámica en el fondo */
+body {
+    animation: dynamicBackground 10s infinite alternate; /* Cambia el fondo gradualmente */
+}
+
+@keyframes dynamicBackground {
+    0% {
+        background: linear-gradient(135deg, #00FF80, #00BFFF);
+    }
+    50% {
+        background: linear-gradient(135deg, #FF6F00, #00BFFF);
+    }
+    100% {
+        background: linear-gradient(135deg, #00FF80, #00BFFF);
+    }
+}
+
+/* Efectos para las tarjetas interactivas */
+.card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sombra de texto */
+h1, h2, p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Efectos para los formularios */
+form input, form textarea {
+    font-size: 1.2rem;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #00BFFF;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #FF6347; /* Cambio de borde en foco */
+    box-shadow: 0 0 5px #FF6347;
+}
+
+/* Efecto de parpadeo en los botones */
+@keyframes buttonBlink {
+    0% {
+        background-color: #00FF80;
+    }
+    50% {
+        background-color: #F5F5DC; /* Beige */
+    }
+    100% {
+        background-color: #00FF80;
+    }
+}
+
+button {
+    animation: buttonBlink 3s infinite; /* Parpadeo del botón */
+}

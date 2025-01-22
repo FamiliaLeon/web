@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat León</title>
+    <link rel="shortcut icon" href="img/Logo Familia Leon.png" type="image/x-icon">
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <!-- Formulario de registro -->
+    <div id="registration-form" class="registration-form">
+        <h3>Registro de Usuario</h3>
+        <input type="text" id="username" placeholder="Ingresa tu nombre de usuario">
+        <button onclick="registerUser()">🔑 Registrar</button>
+    </div>
+
+    <!-- Contenedor del chat -->
+    <div id="chat-container" class="chat-container">
+        <div class="chat-header">
+            <h2 id="chat-username">¡Hola, Usuario! 😊</h2>
+            <button class="logout-btn" onclick="logout()">🔒 Cerrar Sesión</button>
+            <button class="clear-btn" onclick="clearMessages()">🗑️ Borrar Mensajes</button>
+        </div>
+
+      
+
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Escribe un mensaje... ✍️">
+            <button onclick="sendMessage()">📩</button>
+            <button onclick="uploadAudio()">🎙️</button>
+            <button onclick="uploadFile()">📁</button>
+        </div>
+        <input type="file" id="file-upload" style="display: none;" />
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>

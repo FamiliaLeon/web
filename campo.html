@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de ¨¨"El Campo"</title>
+    <link rel="shortcut icon" href="img/Logo Familia Leon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Campo.css">
+</head>
+<body>
+
+  
+    <!-- Pantalla de autenticación -->
+    <div id="auth-screen" class="auth-container">
+        <h1>Acceso al Curso</h1>
+        <form id="login-form">
+            <label for="login-pin">Ingrese su Código PIN:</label>
+            <input type="password" id="login-pin" maxlength="4" placeholder="Código PIN" required>
+            <button type="submit" class="btn">Ingresar</button>
+        </form>
+    </div>
+
+    <!-- Página principal -->
+    <div id="main-page" class="main-container" style="display: none;">
+        <header>
+            <h1 id="welcome-message">Bienvenido</h1>
+        </header>
+        <section>
+            <h2>Clases disponibles</h2>
+            <div id="class-list" class="class-list"></div>
+        </section>
+
+        <!-- Herramientas para el instructor -->
+        <div id="edit-tools" class="edit-tools" style="display: none;">
+            <button onclick="addNewClass()" class="btn">Agregar Nueva Clase</button>
+        </div>
+    </div>
+
+    <!-- Modal de clase -->
+    <div id="class-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close">&times;</span>
+            <h2 id="class-title"></h2>
+            <p id="class-description"></p>
+            <div id="resource-list">
+                <h3>Recursos</h3>
+                <ul></ul>
+            </div>
+            <div id="upload-section" class="upload-section" style="display: none;">
+                <h3>Agregar Recurso</h3>
+                <input type="file" id="upload-files" multiple>
+                <textarea id="resource-description" placeholder="Descripción del recurso..."></textarea>
+                <button onclick="saveResource()" class="btn">Guardar</button>
+
+          
+
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="relatos.html">Relatos Familiares</a></li>
+                    <li><a href="mensajes.html">Mensajes de Apoyo</a></li>
+                    <li><a href="juegos.html">Juegos</a></li>
+                    <li><a href="Chat León.html">Chat</a></li>
+                    <li><a href="Uleon.html">Universidad León</a></li>
+        
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="campo.js"></script>
+</body>
+</html>

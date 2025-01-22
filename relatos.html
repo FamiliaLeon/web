@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia León - Relatos Familiares</title>
+    <link rel="shortcut icon" href="img/Logo Familia Leon.png" type="image/x-icon">
+    <link rel="stylesheet" href="relatos.css">
+</head>
+<body>
+    <header>
+        <h1>Relatos Familiares</h1>
+        <p>Comparte tus historias y recuerdos con todos los miembros de la familia León.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="relatos.html">Relatos Familiares</a></li>
+            <li><a href="mensajes.html">Mensajes de Apoyo</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="Uleon.html">Universidad León</a></li>
+
+           
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Escribe un Relato</h2>
+            <form id="relatoForm">
+                <label for="titulo">Título:</label><br>
+                <input type="text" id="titulo" name="titulo" required><br>
+                <label for="contenido">Contenido:</label><br>
+                <textarea id="contenido" name="contenido" rows="5" required></textarea><br>
+                <button type="submit">Guardar Relato</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Relatos Guardados</h2>
+            <div id="relatosContainer">
+                <p>No hay relatos aún. ¡Sé el primero en compartir!</p>
+            </div>
+        </section>
+
+    
+
+    </main>
+    <footer>
+        <p>&copy; 2025 Familia León. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const relatoForm = document.getElementById('relatoForm');
+        const relatosContainer = document.getElementById('relatosContainer');
+
+        // Cargar relatos desde el almacenamiento local
+        function cargarRelatos() {
+            const relatos = JSON.parse(localStorage.getItem('relatos')) || [];
+            relatosContainer.innerHTML = relatos.length ? '' : '<p>No hay relatos aún. ¡Sé el primero en compartir!</p>';
+            relatos.forEach((relato, index) => {
+                const relatoDiv = document.createElement('div');
+                relatoDiv.innerHTML = `
+                    <h3>${relato.titulo}</h3>
+                    <p>${relato.contenido}</p>
+                    <button onclick="borrarRelato(${index})">Borrar</button>
+                `;
+                relatosContainer.appendChild(relatoDiv);
+            });
+        }
+
+        // Guardar un nuevo relato
+        relatoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const titulo = document.getElementById('titulo').value;
+            const contenido = document.getElementById('contenido').value;
+            const relatos = JSON.parse(localStorage.getItem('relatos')) || [];
+            relatos.push({ titulo, contenido });
+            localStorage.setItem('relatos', JSON.stringify(relatos));
+            cargarRelatos();
+            relatoForm.reset();
+        });
+
+        // Borrar un relato
+        function borrarRelato(index) {
+            const relatos = JSON.parse(localStorage.getItem('relatos')) || [];
+            relatos.splice(index, 1);
+            localStorage.setItem('relatos', JSON.stringify(relatos));
+            cargarRelatos();
+        }
+
+        // Inicializar
+        cargarRelatos();
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2c3e50; /* Fondo oscuro */
+    color: #ecf0f1; /* Color de texto claro */
+    line-height: 1.6;
+    padding: 20px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+body:hover {
+    background-color: #34495e; /* Cambio de fondo al pasar el cursor */
+}
+
+/* Estilo del header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #f39c12, #e74c3c); /* Fondo degradado */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: headerFadeIn 1s ease-out; /* Efecto de aparición */
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.1); /* Efecto de aumento */
+}
+
+header p {
+    font-size: 1.3rem;
+    color: #f0f0f0;
+    letter-spacing: 1px;
+    animation: textSlideIn 0.8s ease-in-out; /* Efecto de deslizamiento */
+}
+
+/* Estilo del nav */
+nav {
+    background-color: #34495e; /* Fondo oscuro */
+    padding: 15px 0;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav:hover {
+    background-color: #2c3e50; /* Cambio de fondo al pasar el mouse */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.2s, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Color naranja al pasar el mouse */
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #f39c12; /* Efecto de resplandor */
+}
+
+/* Estilo de las secciones */
+main {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: mainFadeIn 1s ease-out; /* Efecto de desvanecimiento */
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+}
+
+section h2 {
+    font-size: 2.2rem;
+    color: #e74c3c; /* Rojo vibrante */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: textGlow 1s infinite alternate; /* Efecto de resplandor */
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+form input, form textarea {
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 2px solid #3498db; /* Bordes azules */
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    color: #2c3e50;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #e74c3c; /* Bordes rojos al enfocar */
+    box-shadow: 0 0 5px #e74c3c;
+}
+
+form button {
+    padding: 12px;
+    background-color: #f39c12; /* Fondo naranja */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s;
+}
+
+form button:hover {
+    background-color: #e74c3c; /* Fondo rojo al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra en hover */
+}
+
+/* Estilo de los mensajes recibidos */
+#mensajesContainer {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInMessages 1s ease-in-out; /* Efecto de entrada */
+}
+
+.mensaje {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 2px solid #3498db; /* Borde azul para cada mensaje */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.2s;
+}
+
+.mensaje:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mensaje strong {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.mensaje p {
+    font-size: 1rem;
+    color: #34495e;
+    margin-top: 10px;
+}
+
+.mensaje button {
+    background-color: #e74c3c; /* Rojo para borrar */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 15px;
+}
+
+.mensaje button:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+    transform: scale(1.05);
+}
+
+/* Estilo del footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #ecf0f1;
+    background-color: #34495e; /* Fondo oscuro */
+    padding: 10px;
+    border-radius: 10px;
+    animation: footerSlideIn 1s ease-out; /* Animación de aparición */
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* Nuevas animaciones y efectos */
+
+/* Animaciones */
+@keyframes headerFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textSlideIn {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(231, 76, 60, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(231, 76, 60, 1);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(231, 76, 60, 0.8);
+    }
+}
+
+@keyframes mainFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInMessages {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes footerSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para la visibilidad del menú en dispositivos pequeños */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Ocultamos el menú en pantallas pequeñas */
+    }
+
+    .hamburger {
+        display: flex; /* Mostramos el icono de menú hamburguesa */
+    }
+
+    #menu.active {
+        display: block;
+    }
+
+    #menu ul {
+        flex-direction: column; /* Menú en columna */
+        width: 100%; /* Abarca todo el ancho */
+    }
+
+    #menu ul li {
+        text-align: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+}

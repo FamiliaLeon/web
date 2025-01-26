@@ -1,0 +1,216 @@
+/* General */
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente diferente */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Fondo morado y lila */
+    color: #fff;
+}
+
+/* Texto de bienvenida Elida León Sánchez*/
+#welcome-message {
+    color: #d1c4e9; /* Color más claro (lavanda claro) */
+}
+
+/* Botones */
+.btn {
+    background-color: #8e44ad; /* Morado */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #732d91; /* Morado más oscuro */
+}
+
+/* Botón de eliminación */
+.btn-delete {
+    background-color: #f39c12; /* Naranja brillante */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #e67e22; /* Naranja intenso */
+}
+
+/* Estilo adicional para los botones de eliminación */
+.btn-delete {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #e67e22;
+}
+
+/* Contenedor de autenticación */
+.auth-container {
+    text-align: center;
+    padding: 50px;
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.auth-container input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #f39c12;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.auth-container input:focus {
+    border-color: #8e44ad;
+    outline: none;
+}
+
+/* Página principal */
+.main-container {
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #8e44ad; /* Morado */
+}
+
+.class-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.class-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.class-item h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #8e44ad; /* Morado */
+}
+
+.edit-tools {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #f39c12; /* Naranja brillante */
+    color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+}
+
+.modal-content h2 {
+    color: #9b59b6; /* Morado */
+}
+
+.modal-content .close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8e44ad;
+    cursor: pointer;
+}
+
+.modal-content .close:hover {
+    color: #9b59b6;
+}
+
+.upload-section {
+    margin-top: 20px;
+}
+
+.upload-section input,
+.upload-section textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #8e44ad;
+    border-radius: 5px;
+}
+
+.upload-section textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Estilo para la visibilidad del menú en dispositivos pequeños */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Ocultamos el menú en pantallas pequeñas */
+    }
+
+    .hamburger {
+        display: flex; /* Mostramos el icono de menú hamburguesa */
+    }
+
+    #menu.active {
+        display: block;
+    }
+
+    #menu ul {
+        flex-direction: column; /* Menú en columna */
+        width: 100%; /* Abarca todo el ancho */
+    }
+
+    #menu ul li {
+        text-align: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+}

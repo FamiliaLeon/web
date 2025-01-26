@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia León - Mensajes de Apoyo</title>
+    <link rel="shortcut icon" href="img/Logo Familia Leon.png" type="image/x-icon">
+    <link rel="stylesheet" href="mensajes.css">
+</head>
+<body>
+    <header>
+        <h1>Mensajes de Apoyo</h1>
+        <p>Envía y lee mensajes de ánimo y solidaridad entre los miembros de la Familia León.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="relatos.html">Relatos Familiares</a></li>
+            <li><a href="mensajes.html">Mensajes de Apoyo</a></li>
+            <li><a href="juegos.html">Juegos</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="Uleon.html">Universidad León</a></li>
+    
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Envía un Mensaje</h2>
+            <form id="mensajeForm">
+                <label for="nombre">Tu Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+
+              
+
+            </form>
+        </section>
+
+        <section>
+            <h2>Mensajes Recibidos</h2>
+            <div id="mensajesContainer">
+                <p>No hay mensajes todavía. ¡Anímate a compartir uno!</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Familia León. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const mensajeForm = document.getElementById('mensajeForm');
+        const mensajesContainer = document.getElementById('mensajesContainer');
+
+        // Cargar mensajes desde almacenamiento local
+        function cargarMensajes() {
+            const mensajes = JSON.parse(localStorage.getItem('mensajes')) || [];
+            mensajesContainer.innerHTML = mensajes.length ? '' : '<p>No hay mensajes todavía. ¡Anímate a compartir uno!</p>';
+            mensajes.forEach((mensaje, index) => {
+                const mensajeDiv = document.createElement('div');
+                mensajeDiv.classList.add('mensaje');
+                mensajeDiv.innerHTML = `
+                    <strong>${mensaje.nombre}</strong>
+                    <p>${mensaje.texto}</p>
+                    <button onclick="borrarMensaje(${index})">Borrar</button>
+                `;
+                mensajesContainer.appendChild(mensajeDiv);
+            });
+        }
+
+        // Guardar nuevo mensaje
+        mensajeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const texto = document.getElementById('mensaje').value;
+            const mensajes = JSON.parse(localStorage.getItem('mensajes')) || [];
+            mensajes.push({ nombre, texto });
+            localStorage.setItem('mensajes', JSON.stringify(mensajes));
+            cargarMensajes();
+            mensajeForm.reset();
+        });
+
+        // Borrar mensaje
+        function borrarMensaje(index) {
+            const mensajes = JSON.parse(localStorage.getItem('mensajes')) || [];
+            mensajes.splice(index, 1);
+            localStorage.setItem('mensajes', JSON.stringify(mensajes));
+            cargarMensajes();
+        }
+
+        // Inicializar
+        cargarMensajes();
+    </script>
+</body>
+</html>

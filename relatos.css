@@ -1,0 +1,238 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222;  /* Fondo más oscuro para mejor contraste */
+    color: #f1f1f1;  /* Texto más suave */
+    line-height: 1.6;
+    padding: 20px;
+    transition: background-color 0.5s ease;  /* Efecto de transición suave */
+}
+
+/* Estilos del header con un banner vibrante */
+header {
+    background: linear-gradient(135deg, #008080, #ff1493);  /* Degradado con turquesa y rosa brillante */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out;  /* Efecto de desplazamiento suave */
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideIn 1s ease-out;  /* Animación de entrada */
+}
+
+header p {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    font-style: italic;
+    animation: fadeIn 1.5s ease-out;  /* Animación de desvanecimiento */
+}
+
+/* Efecto de deslizamiento en el header */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Efecto de desvanecimiento en el texto */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos de la navegación */
+nav {
+    background-color: #1c1c1c;  /* Fondo gris muy oscuro */
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease;  /* Efecto de color de fondo al pasar el mouse */
+}
+
+nav:hover {
+    background-color: #333333;  /* Cambia al pasar el mouse */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00ff00;  /* Verde brillante */
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.2s, text-shadow 0.3s ease;  /* Efecto de sombra de texto */
+}
+
+nav ul li a:hover {
+    color: #ff69b4;  /* Rosa brillante */
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #ff69b4;  /* Efecto de resplandor */
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #333333;  /* Fondo gris oscuro */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* Sombras más intensas */
+}
+
+/* Estilos para los formularios */
+form {
+    background-color: #222222;  /* Fondo más oscuro */
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.4s ease;  /* Efecto de transición en el borde */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #ffeb3b;  /* Amarillo brillante */
+    background-color: #444444;  /* Fondo gris oscuro */
+    outline: none;
+}
+
+form button {
+    background-color: #00ff00;  /* Verde lima brillante */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s ease;  /* Efecto de transición */
+}
+
+form button:hover {
+    background-color: #4caf50;  /* Verde más oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Efecto de sombra */
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 8px;
+    animation: bounceIn 1s ease-out;  /* Efecto de rebote */
+}
+
+/* Animación de rebote */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+footer p {
+    font-size: 1.1rem;
+}
+
+/* Media Queries - Hacer el diseño más responsivo */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    form input, form textarea {
+        font-size: 1.1rem;
+    }
+
+    form button {
+        font-size: 1.1rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}
+/* Estilo para la visibilidad del menú en dispositivos pequeños */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Ocultamos el menú en pantallas pequeñas */
+    }
+
+    .hamburger {
+        display: flex; /* Mostramos el icono de menú hamburguesa */
+    }
+
+    #menu.active {
+        display: block;
+    }
+
+    #menu ul {
+        flex-direction: column; /* Menú en columna */
+        width: 100%; /* Abarca todo el ancho */
+    }
+
+    #menu ul li {
+        text-align: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+}

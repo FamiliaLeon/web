@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado - Nuevo Estilo</title>
+    <link rel="shortcut icon" href="img/Logo Familia Leon.png" type="image/x-icon">
+    <link rel="stylesheet" href="ahorcado.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Juego del Ahorcado</h1>
+        </header>
+
+        <section class="game">
+            <div id="hangman-image">
+                <img id="hangman-img" src="img/Ahorcadojuego.png" alt="Ahorcado">
+            </div>
+            <p id="word">Palabra: _ _ _ _ _</p>
+            <p id="wrong-letters">Letras incorrectas: </p>
+            <p id="attempts">Intentos restantes: 10</p>
+            <input type="text" id="letter" maxlength="1" placeholder="Ingresa una letra" autofocus>
+            <button id="submit">Adivinar</button>
+            <p id="message"></p>
+        </section>
+
+        <footer>
+            <p>Desarrollado por Alejandro León</p>
+        </footer>
+    </div>
+
+    <script src="ahorcado.js"></script>
+</body>
+</html>

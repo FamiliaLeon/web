@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Logo Familia Leon.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <title>Familia León</title>
+</head>
+<body>
+
+    <!-- Pantalla de acceso -->
+    <div id="access-screen">
+        <h2>Ingrese su código PIN</h2>
+        <form id="pin-form">
+            <input type="text" id="pin-input" maxlength="4" placeholder="Código PIN" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="error-message" style="color: red; display: none;">PIN incorrecto. Intenta de nuevo.</p>
+    </div>
+
+    <!-- Página principal oculta, visible después de la autenticación -->
+    <div id="main-page" style="display: none;">
+        <header>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h1>Familia León</h1>
+        
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="relatos.html">Relatos Familiares</a></li>
+                    <li><a href="mensajes.html">Mensajes de Apoyo</a></li>
+                    <li><a href="juegos.html">Juegos</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="Uleon.html">Universidad León</a></li>
+        
+                 
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>¡ENCONTRARAS! DIVERSION, ENTRETENIMIENTO, Y MUCHO MAS</h2>
+            <P></P>
+            <h2>Bienvenidos</h2>
+            <p>Navega por nuestra pagina web</p>
+        </section>
+
+            </section>
+        </main>
+
+       
+
+        
+    </div>
+
+    <script>
+    // Definir los usuarios con su código PIN
+const users = {
+    "8547": "Marlenny León Sánchez",
+    "1695": "William León Sánchez",
+    "7149": "Elida León Sánchez",
+    "1036": "Milciades León Sánchez",
+    "4895": "Alejandro León Buitrago", 
+    "9031": "Karen Ibague León",        
+    "4198": "Yerson León Velazco",
+    "1874": "Oscar Hernandez León",
+    "1847": "Julian León Velazco",
+    "1876": "Salome León Martinez",
+    "2398": "Linda Yuleth León",
+    "4561": "Wendy Loraine Peña León",
+    "1391": "Mary Luz",
+    "3218": "Lauren Hernandez León"
+};
+
+// Capturar el formulario y la entrada del PIN
+const pinForm = document.getElementById("pin-form");
+const pinInput = document.getElementById("pin-input");
+const errorMessage = document.getElementById("error-message");
+const accessScreen = document.getElementById("access-screen");
+const mainPage = document.getElementById("main-page");
+
+// Función para verificar el PIN
+function verifyPin(event) {
+    event.preventDefault(); // Evitar el comportamiento por defecto del formulario
+
+    const enteredPin = pinInput.value.trim();
+
+    // Verificar si el PIN ingresado es válido
+    if (users[enteredPin]) {
+        // Mostrar el nombre del usuario y notificar en consola
+        alert(`¡Bienvenido, ${users[enteredPin]}!`);
+        console.log(`${users[enteredPin]} (PIN: ${enteredPin}) ha accedido a la página.`);
+
+        // Ocultar la pantalla de acceso y mostrar la página principal
+        accessScreen.style.display = 'none';
+        mainPage.style.display = 'block';
+    } else {
+        // Si el PIN es incorrecto, mostrar mensaje de error
+        errorMessage.style.display = 'block';
+        pinInput.value = ''; // Limpiar el campo de PIN
+    }
+}
+
+// Agregar el evento de submit al formulario
+pinForm.addEventListener("submit", verifyPin);
+
+// Función para el menú hamburguesa
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
+
+        </script>

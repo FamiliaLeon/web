@@ -153,28 +153,4 @@ footer {
     font-size: 28px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-/* Estilo para la visibilidad del menú en dispositivos pequeños */
-@media (max-width: 768px) {
-    nav {
-        display: none; /* Ocultamos el menú en pantallas pequeñas */
-    }
 
-    .hamburger {
-        display: flex; /* Mostramos el icono de menú hamburguesa */
-    }
-
-    #menu.active {
-        display: block;
-    }
-
-    #menu ul {
-        flex-direction: column; /* Menú en columna */
-        width: 100%; /* Abarca todo el ancho */
-    }
-
-    #menu ul li {
-        text-align: center;
-        width: 100%;
-        margin: 10px 0;
-    }
-}
